@@ -432,6 +432,87 @@ span {
     transform: scale(1.2);
 }
 
+.experience-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 4rem;
+    perspective: 1000px;
+}
+
+.experience-cards .card {
+    position: relative;
+    background: linear-gradient(145deg, #111, #1e1e1e);
+    border: 2px solid transparent;
+    border-radius: 2rem;
+    padding: 2rem;
+    width: 250px;
+    height: 320px;
+    text-align: center;
+    transition: transform 0.8s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(4, 0, 255, 0.2);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.experience-cards .card:hover {
+    transform: rotateY(180deg);
+    box-shadow: 0 0 35px #0400ff;
+}
+
+.experience-cards .card img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    animation: pulseGlow 2s infinite;
+}
+
+.experience-cards .card h3,
+.experience-cards .card p {
+    backface-visibility: hidden;
+}
+
+.experience-cards .card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.experience-cards .card p {
+    font-size: 1.4rem;
+    color: #ccc;
+    padding: 0 1rem;
+}
+
+.experience-cards .card::after {
+    content: "🚀 Growing my coding skills every day!";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(180deg);
+    color: #fff;
+    font-size: 1.4rem;
+    font-style: italic;
+    text-align: center;
+    opacity: 0.9;
+    backface-visibility: hidden;
+}
+
+@keyframes pulseGlow {
+    0% {
+        filter: drop-shadow(0 0 5px #0400ff);
+    }
+    50% {
+        filter: drop-shadow(0 0 15px #0400ff);
+    }
+    100% {
+        filter: drop-shadow(0 0 5px #0400ff);
+    }
+}
+
 @keyframes cursor {
     to {
         border-left: 3px solid #0400ff;
